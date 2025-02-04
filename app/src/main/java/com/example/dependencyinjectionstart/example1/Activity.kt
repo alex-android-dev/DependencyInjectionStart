@@ -4,17 +4,12 @@ import javax.inject.Inject
 
 class Activity {
 
-    val keyboard: Keyboard = DaggerHiltComponent.create().getKeyboard()
-
     @Inject
-    lateinit var mouse: Mouse
+    lateinit var computer: Computer
 
-    @Inject
-    lateinit var monitor: Monitor
 
     init {
-        DaggerHiltComponent.create().inject(activity = this)
+        DaggerHiltComponent.create().inject(this)
     }
-
 
 }

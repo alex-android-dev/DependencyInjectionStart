@@ -10,8 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val activity = Activity()
-        activity.keyboard
-        activity.mouse
-        activity.monitor
+        activity.computer
     }
 }
