@@ -2,10 +2,8 @@ package com.example.dependencyinjectionstart.example1
 
 import dagger.Component
 
-@Component
+@Component(modules = [ComputerModule::class])
 interface HiltComponent {
-
-    fun getKeyboard() : Keyboard
 
     fun inject(activity: Activity)
 

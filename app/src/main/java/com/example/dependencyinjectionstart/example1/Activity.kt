@@ -7,7 +7,6 @@ class Activity {
     @Inject
     lateinit var computer: Computer
 
-
     init {
         DaggerHiltComponent.create().inject(this)
     }
