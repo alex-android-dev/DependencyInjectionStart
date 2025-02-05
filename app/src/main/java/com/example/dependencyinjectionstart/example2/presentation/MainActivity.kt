@@ -30,11 +30,6 @@ class MainActivity : AppCompatActivity() {
         val activity = Activity()
         activity.computer
         viewModel.method()
-        Log.d("MainActivity", "MainActivity database ${daggerComponent.getDatabase()}")
-        Log.d("MainActivity", "MainActivity database ${daggerComponent.getDatabase()}")
-
-        Log.d("MainActivity", "MainActivity API ${daggerComponent.getApiService()}")
-        Log.d("MainActivity", "MainActivity API ${daggerComponent.getApiService()}")
     }
 
 }

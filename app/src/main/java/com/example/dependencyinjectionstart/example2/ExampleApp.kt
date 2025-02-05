@@ -5,7 +5,8 @@ import com.example.dependencyinjectionstart.example2.di.DaggerApplicationCompone
 
 class ExampleApp : Application() {
 
-    val daggerComponent =
+    val daggerComponent by lazy {
         DaggerApplicationComponent.factory().create(this, System.currentTimeMillis())
+    }
 
 }
