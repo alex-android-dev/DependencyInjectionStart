@@ -4,7 +4,7 @@ import com.example.dependencyinjectionstart.example2.data.database.ExampleDataba
 import javax.inject.Inject
 
 class ExampleLocalDataSourceImpl @Inject constructor(
-    private val database: ExampleDatabase
+    private val database: ExampleDatabase,
 ) : ExampleLocalDataSource {
 
     override fun method() {
