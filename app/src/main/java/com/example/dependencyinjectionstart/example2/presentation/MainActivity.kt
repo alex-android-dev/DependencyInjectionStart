@@ -4,18 +4,20 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dependencyinjectionstart.R
 import com.example.dependencyinjectionstart.example1.Activity
+import com.example.dependencyinjectionstart.example2.di.ContextModule
 import com.example.dependencyinjectionstart.example2.di.DaggerApplicationComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+    val daggerComponent by lazy {
+        DaggerApplicationComponent.builder().contextModule(ContextModule(this)).build()
+    }
+
     @Inject
     lateinit var viewModel: ExampleViewModel
 
-    val daggerComponent = DaggerApplicationComponent.create()
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val activity = Activity()
