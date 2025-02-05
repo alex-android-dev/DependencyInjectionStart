@@ -2,7 +2,9 @@ package com.example.dependencyinjectionstart.example2.data.network
 
 import android.util.Log
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class ExampleApiService @Inject constructor(
     private val currentTime: Long,
 ) {
