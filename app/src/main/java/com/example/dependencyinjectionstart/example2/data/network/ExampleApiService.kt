@@ -3,10 +3,13 @@ package com.example.dependencyinjectionstart.example2.data.network
 import android.util.Log
 import javax.inject.Inject
 
-class ExampleApiService @Inject constructor() {
+class ExampleApiService @Inject constructor(
+    private val currentTime: Long,
+) {
 
     fun method() {
         Log.d(LOG_TAG, "ExampleApiService")
+        Log.d(LOG_TAG, "current time: $currentTime")
     }
 
     companion object {
