@@ -4,16 +4,16 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dependencyinjectionstart.R
 import com.example.dependencyinjectionstart.example1.Activity
+import com.example.dependencyinjectionstart.example1.DaggerHiltComponent
+import com.example.dependencyinjectionstart.example1.HiltComponent
+import com.example.dependencyinjectionstart.example2.di.ApplicationComponent
 import com.example.dependencyinjectionstart.example2.di.DaggerApplicationComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     private val daggerComponent by lazy {
-        DaggerApplicationComponent.builder()
-            .currentTime(System.currentTimeMillis())
-            .context(this)
-            .build()
+        DaggerApplicationComponent.factory().create(this, System.currentTimeMillis())
     }
 
     @Inject
