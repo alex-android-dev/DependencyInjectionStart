@@ -10,7 +10,7 @@ import com.example.dependencyinjectionstart.example1.Activity
 import com.example.dependencyinjectionstart.example2.ExampleApp
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivitySecond : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -32,18 +32,12 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_second)
         val activity = Activity()
         activity.computer
 
         viewModel.method()
         viewModelSecond.method()
-
-        findViewById<TextView>(R.id.tv_hello_world).setOnClickListener {
-            Intent(this, MainActivitySecond::class.java).apply {
-                startActivity(this)
-            }
-        }
 
     }
 
