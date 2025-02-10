@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionstart.example2.data.datasource
+package com.example.dependencyinjectionstart.example2.data.datasource.local
 
 import com.example.dependencyinjectionstart.example2.data.database.ExampleDatabase
 import javax.inject.Inject
