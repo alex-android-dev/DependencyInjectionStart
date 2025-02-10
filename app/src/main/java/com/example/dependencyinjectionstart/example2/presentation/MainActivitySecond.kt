@@ -23,7 +23,7 @@ class MainActivitySecond : AppCompatActivity() {
 
     private val daggerComponent by lazy {
         (application as ExampleApp).daggerComponent
-            .activityComponentFactory().create("ID_2")
+            .activityComponentFactory().create("ID_2", "name_2")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
