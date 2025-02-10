@@ -17,12 +17,12 @@ interface DataModule {
 
     @ApplicationScope
     @Binds
-    @exampleRemoteDatabaseQualifier
+    @ExampleRemoteDatabaseQualifier
     fun bindExampleRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 
     @ApplicationScope
     @Binds
-    @testRemoteDatabaseQualifier
+    @TestRemoteDatabaseQualifier
     fun bindTestRemoteDataSource(impl: TestRemoteDataSourceImpl): ExampleRemoteDataSource
 
 }

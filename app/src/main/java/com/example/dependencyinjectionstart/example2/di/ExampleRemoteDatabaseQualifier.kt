@@ -4,4 +4,4 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
-annotation class testRemoteDatabaseQualifier
+annotation class ExampleRemoteDatabaseQualifier
