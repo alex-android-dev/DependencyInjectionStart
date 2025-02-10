@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionstart.example2.data.datasource
+package com.example.dependencyinjectionstart.example2.data.datasource.remote
 
 import com.example.dependencyinjectionstart.example2.data.network.ExampleApiService
 import javax.inject.Inject

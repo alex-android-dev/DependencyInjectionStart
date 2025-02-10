@@ -1,12 +1,12 @@
 package com.example.dependencyinjectionstart.example2.di
 
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleLocalDataSource
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleLocalDataSourceImpl
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleRemoteDataSource
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleRemoteDataSourceImpl
+import com.example.dependencyinjectionstart.example2.data.datasource.local.ExampleLocalDataSource
+import com.example.dependencyinjectionstart.example2.data.datasource.local.ExampleLocalDataSourceImpl
+import com.example.dependencyinjectionstart.example2.data.datasource.remote.ExampleRemoteDataSource
+import com.example.dependencyinjectionstart.example2.data.datasource.remote.ExampleRemoteDataSourceImpl
+import com.example.dependencyinjectionstart.example2.data.datasource.remote.TestRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
-import javax.inject.Singleton
 
 @Module
 interface DataModule {
@@ -17,6 +17,12 @@ interface DataModule {
 
     @ApplicationScope
     @Binds
+    @exampleRemoteDatabaseQualifier
     fun bindExampleRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+
+    @ApplicationScope
+    @Binds
+    @testRemoteDatabaseQualifier
+    fun bindTestRemoteDataSource(impl: TestRemoteDataSourceImpl): ExampleRemoteDataSource
 
 }
