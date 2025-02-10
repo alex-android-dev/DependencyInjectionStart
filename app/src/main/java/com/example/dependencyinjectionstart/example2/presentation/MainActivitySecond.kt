@@ -1,8 +1,6 @@
 package com.example.dependencyinjectionstart.example2.presentation
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.dependencyinjectionstart.R
@@ -25,6 +23,7 @@ class MainActivitySecond : AppCompatActivity() {
 
     private val daggerComponent by lazy {
         (application as ExampleApp).daggerComponent
+            .activityComponentFactory().create("ID_2")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
