@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.dependencyinjectionstart.R
-import com.example.dependencyinjectionstart.example1.Activity
 import com.example.dependencyinjectionstart.example2.ExampleApp
 import javax.inject.Inject
 
@@ -25,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     private val daggerComponent by lazy {
         (application as ExampleApp).daggerComponent
+            .activityComponentFactory()
+            .create("ID")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +34,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        val activity = Activity()
-        activity.computer
 
         viewModel.method()
         viewModelSecond.method()
