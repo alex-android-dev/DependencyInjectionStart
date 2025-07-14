@@ -6,6 +6,10 @@ import javax.inject.Inject
 
 
 class Activity {
+    /**
+     * Создаем компонент
+     */
+    private val daggerComponent = DaggerDaggerComponent.create()
 
     lateinit var computer: Computer
 
@@ -16,14 +20,14 @@ class Activity {
 //    @Inject
 //    lateinit var keyboard: Keyboard
 
+    @Inject
+    lateinit var monitor: Monitor
+
     /**
      * Реализация геттера в даггере
      */
-    val keyboard = DaggerDaggerComponent.create().getKeyboard()
-    val mouse = DaggerDaggerComponent.create().getMouse()
-
-    @Inject
-    lateinit var monitor: Monitor
+    val keyboard = daggerComponent.getKeyboard()
+    val mouse = daggerComponent.getMouse()
 
 
     init {
@@ -32,8 +36,7 @@ class Activity {
          * Компонент в свою очередь будет заниматься созданием инстансов и поставкой в наш класс
          */
         Component().inject(this)
-
-        DaggerDaggerComponent.create().inject(this)
+        daggerComponent.inject(this)
     }
 
 }
