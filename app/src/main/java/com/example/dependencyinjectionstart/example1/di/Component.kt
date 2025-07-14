@@ -1,4 +1,14 @@
-package com.example.dependencyinjectionstart.example1
+package com.example.dependencyinjectionstart.example1.di
+
+import com.example.dependencyinjectionstart.example1.Activity
+import com.example.dependencyinjectionstart.example1.Computer
+import com.example.dependencyinjectionstart.example1.ComputerTower
+import com.example.dependencyinjectionstart.example1.Keyboard
+import com.example.dependencyinjectionstart.example1.Memory
+import com.example.dependencyinjectionstart.example1.Monitor
+import com.example.dependencyinjectionstart.example1.Mouse
+import com.example.dependencyinjectionstart.example1.Processor
+import com.example.dependencyinjectionstart.example1.Storage
 
 
 /**
@@ -34,7 +44,7 @@ class Component {
      */
     fun inject(activity: Activity) {
         activity.computer = getComputer()
-        activity.keyboard = Keyboard()
+//        activity.keyboard = Keyboard()
     }
 
 
